@@ -8,6 +8,8 @@ class UsersController < ApplicationController
 
   # GET /users/1 or /users/1.json
   def show
+    @microposts = User.find(params[:id]).microposts
+    @micropost = @microposts.limit(1)
   end
 
   # GET /users/new
